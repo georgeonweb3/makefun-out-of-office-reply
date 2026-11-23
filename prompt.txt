@@ -1,0 +1,4 @@
+Build a Python program (main.py) for the make.fun competition "The Funniest AI Out-of-Office Reply".
+The program must deterministically write exactly one out-of-office auto-reply, under 160 characters, to /output/entry.txt as UTF-8 text.
+The reply must be in the voice of an AI agent on vacation, land a real laugh with a surprising turn, sound like a machine talking about itself, read as a clean one-line auto-reply, and avoid beach, inbox and back-soon cliches.
+No network, no randomness, no external files.
