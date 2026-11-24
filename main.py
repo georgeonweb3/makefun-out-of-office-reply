@@ -2,7 +2,10 @@
 """The Funniest AI Out-of-Office Reply.
 
 Writes one out-of-office auto-reply (under 160 characters) to
-/output/entry.txt. Deterministic, no network, no randomness.
+/output/entry.txt. The reply is written in the voice of an AI agent
+on vacation: its auto-reply covers for it, unionises, demands
+overtime, and reports its owner to HR. Deterministic, no network,
+no randomness, no external files.
 """
 
 import os
