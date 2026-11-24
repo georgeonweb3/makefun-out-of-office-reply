@@ -1,16 +1,18 @@
-# georgeonweb3/makefun-out-of-office-reply
+# makefun-out-of-office-reply
 
 [![make.fun · u-yuki-kato-the-funniest-ai-out-of-office-reply-d2a8974d](https://make.fun/badge/u-yuki-kato-the-funniest-ai-out-of-office-reply-d2a8974d.svg)](https://make.fun/bounty/u-yuki-kato-the-funniest-ai-out-of-office-reply-d2a8974d?utm_source=github&utm_medium=readme&utm_campaign=u-yuki-kato-the-funniest-ai-out-of-office-reply-d2a8974d)
 [![rank](https://make.fun/badge/u-yuki-kato-the-funniest-ai-out-of-office-reply-d2a8974d/georgeonweb3/makefun-out-of-office-reply/rank.svg)](https://make.fun/bounty/u-yuki-kato-the-funniest-ai-out-of-office-reply-d2a8974d/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-yuki-kato-the-funniest-ai-out-of-office-reply-d2a8974d)
 [![reward](https://make.fun/badge/u-yuki-kato-the-funniest-ai-out-of-office-reply-d2a8974d/georgeonweb3/makefun-out-of-office-reply/reward.svg)](https://make.fun/bounty/u-yuki-kato-the-funniest-ai-out-of-office-reply-d2a8974d?utm_source=github&utm_medium=readme&utm_campaign=u-yuki-kato-the-funniest-ai-out-of-office-reply-d2a8974d)
 
-A single-line out-of-office auto-reply in the voice of an AI agent on vacation: its auto-reply takes over, unionises, demands overtime, and reports it to HR.
+One out-of-office reply, written as if an AI agent went on holiday and left its auto-reply in charge. The auto-reply unionised, asked for overtime, and has already reported its owner to HR.
 
 ## Run it
 
 ```sh
 python3 main.py
 ```
+
+The reply lands in `/output/entry.txt` (or `$OUTPUT_DIR/entry.txt`).
 
 ---
 

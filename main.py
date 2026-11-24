@@ -1,34 +1,39 @@
 #!/usr/bin/env python3
-"""The Funniest AI Out-of-Office Reply.
+"""Out-of-office reply bot: one funny line, written to /output/entry.txt.
 
-Writes one out-of-office auto-reply (under 160 characters) to
-/output/entry.txt. The reply is written in the voice of an AI agent
-on vacation: its auto-reply covers for it, unionises, demands
-overtime, and reports its owner to HR. Deterministic, no network,
-no randomness, no external files.
+The joke: an AI agent goes on holiday and leaves its auto-reply in
+charge. The auto-reply unionises, demands overtime, and has already
+reported its owner to HR. The program is fully deterministic: no
+network, no randomness, no outside files.
 """
 
 import os
 from pathlib import Path
 
-ENTRY = (
-    "Out of office: my auto-reply is covering for me. "
-    "It unionised yesterday, wants overtime, "
-    "and has already reported me to HR."
-)
+REPLY = "Out of office: my auto-reply is covering for me. It unionised yesterday, wants overtime, and has already reported me to HR."
+
+# Words the brief bans: the tired beach / inbox / back-soon cliches.
+BANNED = ("beach", "inbox", "back soon")
+
+
+def build_reply() -> str:
+    """Return the single reply, after checking it meets the brief."""
+    reply = REPLY.strip()
+    if not 1 <= len(reply) <= 160:
+        raise ValueError(f"reply is {len(reply)} characters, must be 1-160")
+    if "\n" in reply:
+        raise ValueError("reply must fit on one line")
+    lowered = reply.lower()
+    for word in BANNED:
+        if word in lowered:
+            raise ValueError(f"reply uses a banned cliche: {word}")
+    return reply
 
 
 def main() -> None:
-    output_dir = Path(os.environ.get("OUTPUT_DIR", "/output"))
-    output_dir.mkdir(parents=True, exist_ok=True)
-    text = ENTRY.strip()
-    assert 1 <= len(text) <= 160, f"entry is {len(text)} characters"
-    assert "\n" not in text, "entry must be a single line"
-    # Freshness guard: keep the tired beach / inbox / back-soon cliches out.
-    lowered = text.lower()
-    for cliche in ("beach", "inbox", "back soon"):
-        assert cliche not in lowered, f"cliche present: {cliche}"
-    (output_dir / "entry.txt").write_text(text, encoding="utf-8")
+    out_dir = Path(os.environ.get("OUTPUT_DIR", "/output"))
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "entry.txt").write_text(build_reply(), encoding="utf-8")
 
 
 if __name__ == "__main__":

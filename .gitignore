@@ -1,3 +1,4 @@
+# Python bytecode and the grader's output directory.
 __pycache__/
 *.pyc
 /output/
